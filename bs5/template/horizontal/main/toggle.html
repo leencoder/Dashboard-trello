@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS and Popper.js (required for dropdowns) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Hide the default checkbox */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Toggle button styling */
+        .toggle-label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            user-select: none;
+        }
+
+        /* Change background color when "checked" */
+        input[type="checkbox"]:checked+.toggle-label {
+            background-color: #28A745;
+        }
+
+        /* Change text based on the state of the checkbox */
+        .toggle-label::before {
+            content: "Off";
+        }
+
+        input[type="checkbox"]:checked+.toggle-label::before {
+            content: "On";
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Dropdown Menu Example -->
+    <div class="container mt-5">
+        <div class="dropdown">
+            <!-- Dropdown button -->
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+            </button>
+            <!-- Dropdown menu items -->
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<div class="d-flex align-items-center mb-8 justify-content-between cursor-pointer" data-bs-toggle="modal"
+    data-bs-target="#task-one">
+    <div class="d-flex flex-column">
+        <a href="#" class="text-dark mb-1 fs-16">Project Briefing</a>
+        <span class="text-fade fs-12">Project Manager</span>
+    </div>
+    <ul class="box-controls pull-right">
+        <li class="dropdown">
+            <a href="" class="px-10" data-bs-toggle="modal" data-bs-target="#task-one"><i class="ti-more-alt"></i>
+            </a>
+            <div class="modal fade" id="task-one" tabindex="-1" aria-labelledby="task-oneLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="task-oneLabel">
+                                Project Briefing</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body d-flex">
+                            <div>Body Text</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save
+                                changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
